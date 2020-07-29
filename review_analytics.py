@@ -44,3 +44,20 @@ for d in data:
 		good.append(d)
 print("總共有 ", len(good), " 筆小於 100 字")
 
+
+
+#以上的程式可以用以下快寫法 [list comprehension]
+#第一個 d 代表 .append(d) 的 d, 也可以不要寫 d, 可以改成任意東西，
+# 若是寫 good = [1 for d in data if 'good' in d], 就會變成一堆 1
+good = [d for d in data if 'good' in d]
+
+#以下寫法會列出 True/False
+bad = ['bad' in d for d in data]
+
+#上面的寫法，可以用詳細的寫法，如下：
+bad = []
+for d in data:
+	bad.append('bad' in d)
+
+
+

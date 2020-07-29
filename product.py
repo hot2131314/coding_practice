@@ -25,3 +25,14 @@ while True:
 	price = input("請輸入價格： ")
 	products.append([name, price])
 print(products)
+
+
+
+#列印商品和價格
+for p in products:
+	print(p[0]) #會印出每一個商品名稱
+	print(p[0], '的價格是', p[1])
+
+
+
+

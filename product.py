@@ -28,6 +28,8 @@ print(products)
 
 
 
+
+
 #列印商品和價格
 for p in products:
 	print(p[0]) #會印出每一個商品名稱
@@ -40,4 +42,17 @@ with open('product_write.csv', 'w', encoding='utf-8') as f:
 	for p in products:
 		f.write(p[0] + ',' + p[1] + '\n')
 
+#讀取  .split() 切割完的結果是 list
+products = []
+with open('product_write.csv', 'r', encoding='utf-8') as f:
+	for line in f:
+		s = line.strip().split(',')
+		print(s)
 
+#以上的寫法可以用更簡單方法寫：
+products = []
+with open('product_write.csv', 'r', encoding='utf-8') as f:
+	for line in f:
+		name, price = line.strip().split(',')
+		products.append([name, price])
+print(products)

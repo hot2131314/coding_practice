@@ -35,7 +35,8 @@ for p in products:
 
 #底下的 'pruduct_write.txt' 不一定要先建立，他會自動建立這檔案
 #CSV 檔通常都用逗號做區隔
-with open('product_write.csv', 'w') as f:
+with open('product_write.csv', 'w', encoding='utf-8') as f:
+	f.write('商品, 價格\n')#這樣寫，會產生亂碼，所以才要加 encoding = utf-8
 	for p in products:
 		f.write(p[0] + ',' + p[1] + '\n')
 

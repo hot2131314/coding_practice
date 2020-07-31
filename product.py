@@ -33,6 +33,10 @@ for p in products:
 	print(p[0]) #會印出每一個商品名稱
 	print(p[0], '的價格是', p[1])
 
-
+#底下的 'pruduct_write.txt' 不一定要先建立，他會自動建立這檔案
+#CSV 檔通常都用逗號做區隔
+with open('product_write.csv', 'w') as f:
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n')
 
 
